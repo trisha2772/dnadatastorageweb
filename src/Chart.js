@@ -16,7 +16,8 @@ class Chart extends React.Component{
     displayLegend: false,
     legendPosition: 'right',
     chartData: {},
-    title: "Data"
+    title: "Data",
+    yAxis: "GC Content"
   }
 
   render(){
@@ -32,7 +33,7 @@ class Chart extends React.Component{
               display: this.props.displayTitle,
               text: this.props.title,
               fontSize: 25,
-            fontColor: "#B4CBE7"},
+            fontColor: "#45423c"},
 
               legend: {
                 display: this.props.displayLegend,
@@ -42,26 +43,26 @@ class Chart extends React.Component{
               scales: {
         xAxes: [ {
          display: true,
-         gridLines: {color: "#B4CBE7" },
+         gridLines: {color: "#45423c" },
          ticks: {
                   fontColor: "#B4CBE7"},
           scaleLabel: {
             display: true,
             labelString: 'DNA Strand length',
             fontSize: 18,
-            fontColor: '#B4CBE7'
+            fontColor: '#45423c'
           }
         } ],
         yAxes: [ {
           display: true,
-          gridLines: {color: "#B4CBE7" },
+          gridLines: {color: "#45423c" },
           ticks: {
-                   fontColor: "#B4CBE7"},
+                   fontColor: "#45423c"},
           scaleLabel: {
             display: true,
-            labelString: 'GC Content',
+            labelString: this.props.yAxis,
             fontSize: 18,
-            fontColor: '#B4CBE7'
+            fontColor: '#45423c'
 
           }
         } ]

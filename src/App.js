@@ -38,7 +38,7 @@ class App extends React.Component{
               labels: [],
               datasets: [
                 {
-                  label: 'Population',
+                  label: 'GC Content',
                   data: [],
                   backgroundColor: [
                     'rgba(255, 99, 132, 0.6)'
@@ -49,7 +49,7 @@ class App extends React.Component{
             labels: [],
             datasets: [
               {
-                label: 'Population',
+                label: 'bits/nt',
                 data: [],
                 backgroundColor: [
                   'rgba(255, 99, 132, 0.6)'
@@ -63,7 +63,7 @@ class App extends React.Component{
             labels: [],
             datasets: [
               {
-                label: 'Population',
+                label: 'bits/nt',
                 data: [],
                 backgroundColor: [
                   'rgba(255, 99, 132, 0.6)'
@@ -162,10 +162,10 @@ getInfoExt(text){
       labels: this.state.chartData.gcContent.labels.concat([this.state.dna.length]),
       datasets: [
         {
-          label: 'Population',
+          label: 'GC Content',
           data: this.state.chartData.gcContent.datasets[0].data.concat([this.gcContent(this.state.dna)]),
           backgroundColor: [
-            'rgba(255, 99, 132, 0.6)'
+            'rgba(40, 138, 96, 0.6)'
           ]
         }
       ]
@@ -176,10 +176,10 @@ getInfoExt(text){
       labels: this.state.chartData.info.labels.concat([this.state.dna.length]),
       datasets: [
         {
-          label: 'Population',
+          label: 'bits/nt',
           data: this.state.chartData.info.datasets[0].data.concat([this.infoIndex(this.state.text)]),
           backgroundColor: [
-            'rgba(57, 211, 180, 0.6)'
+            'rgba(56, 40, 138, 0.6)'
           ]
         }
       ]
@@ -190,10 +190,10 @@ ext: {
 labels: this.state.chartData.ext.labels.concat([this.state.dna.length]),
 datasets: [
   {
-    label: 'Population',
+    label: 'bits/nt',
     data: this.state.chartData.ext.datasets[0].data.concat([this.getInfoExt(this.state.text)]),
     backgroundColor: [
-      'rgba(228, 220, 99, 0.6)'
+      'rgba(138, 40, 107, 0.6)'
     ]
   }
 ]
@@ -262,10 +262,10 @@ this.setState({dna: this.text2DNA(e.target.value)})
         <Chart title="GC Content" chartData = {this.state.chartData.gcContent} redraw={true}/>
         </div>
         <div className = "firstChart">
-        <Chart title="Template Strand Information Index" chartData = {this.state.chartData.info} redraw={true}/>
+        <Chart title="Template Strand Information Index" yAxis = "bits/nt" chartData = {this.state.chartData.info} redraw={true}/>
         </div>
         <div className = "firstChart">
-        <Chart title="Extension Length  Information Index" chartData = {this.state.chartData.ext} redraw={true}/>
+        <Chart title="Extension Length Information Index" yAxis = "bits/nt" chartData = {this.state.chartData.ext} redraw={true}/>
         </div>
 
         </div>
